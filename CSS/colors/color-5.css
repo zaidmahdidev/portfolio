@@ -1,0 +1,8 @@
+:root{
+    --themecolor: #0e170f;
+}
+
+*::selection{
+    background-color: #0e170f;
+    color: white;
+}
