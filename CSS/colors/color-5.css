@@ -1,8 +1,8 @@
 :root{
-    --themecolor: #0e170f;
+    --maincolor: #ea2828;
 }
 
 *::selection{
-    background-color: #0e170f;
+    background-color: #ea2828;
     color: white;
 }

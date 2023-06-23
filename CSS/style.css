@@ -12,6 +12,7 @@
   }
   body {
     font-family: "Work Sans", sans-serif;
+    
   }
   ul{
     list-style: none;
@@ -47,7 +48,7 @@
 
   /* start global variables */
   :root{
-      --themecolor: #3314e0;
+      --maincolor: #3314e0;
   }
   /* end global variables */
   
@@ -64,6 +65,7 @@
       bottom: 0;
       transition: 0.4s;
       z-index: 44;
+      overflow: hidden;
   }
    header .profile{
       text-align: center;
@@ -72,7 +74,7 @@
   header .profile img{
       width: 150px;
       border-radius: 50%;
-      border: 3px solid var(--themecolor);
+      border: 3px solid var(--maincolor);
   }
   header .profile h1{
       color: white;
@@ -91,7 +93,7 @@
       transition: 0.5s;
   }
   header .profile .socail-icons a:hover{
-      background-color: var(--themecolor);
+      background-color: var(--maincolor);
   }  
 
   /* start navbar */
@@ -106,8 +108,8 @@
   }
   header nav ul li a {
       display: inline-block;
-      padding: 7px 10px;
-      margin: 5px 0;
+      padding: 4px 10px;
+      margin: 8px 0;
       color: white;
       font-weight: 400;
       font-size: 15px;
@@ -120,7 +122,7 @@
   }
   header nav ul li a:hover i,
   header nav ul li .active i {
-    color: var(--themecolor);
+    color: var(--maincolor);
   }  
   /* end navbar */
 
@@ -139,7 +141,7 @@
       transition: 0.5s;
   }
   header .footer p a{
-      color: var(--themecolor);
+      color: var(--maincolor);
   }
   /* end footer  */
   #menu{
@@ -150,7 +152,7 @@
       width: 40px;
       height: 40px;
       color: white;
-      background-color: var(--themecolor);
+      background-color: var(--maincolor);
       text-align: center;
       line-height: 42px;
       border-radius: 50%;
@@ -177,7 +179,7 @@
 
   /* main section  */
   .main-section{
-    background-color: var(--themecolor);
+    background-color: var(--maincolor);
     padding-top: 20px;
     padding-bottom: 0.1px;
 
@@ -210,7 +212,6 @@
         font-size: 15px;
      }
   }
-
 
 /* end main section */
 
@@ -250,7 +251,7 @@
   }
   .home .home-row h1 span{
     font-family:cursive;
-    color: var(--themecolor);
+    color: var(--maincolor);
     font-weight: 700;
   }
   .home .home-row p {
@@ -302,7 +303,7 @@
 }
 .buttonn{
   margin-left: 25px;
-  border: 2px solid var(--themecolor);
+  border: 2px solid var(--maincolor);
   border-radius: 5px;
   color: white;
   padding: 6px 20px;
@@ -317,7 +318,7 @@
   content: '';
   width: 12px;
   height: 12px;
-  background-color: var(--themecolor);
+  background-color: var(--maincolor);
   position: absolute;
   border-radius: 50%;
   top: 50%;
@@ -347,14 +348,13 @@
 }
 .about-img{
     border-radius: 68% 90% 100% 63% /80% 94% 75% 89%;
-    /* border:2px solid var(--themecolor) ; */
-    box-shadow: 10px 20px 20px var(--themecolor);
+    box-shadow: 10px 20px 20px var(--maincolor);
     width: 300px;
     width: 70%;
     margin: 20px 20px 50px 20px;
 }
 .about .content{
-   /* text-shadow: 0px 0px 5px var(--themecolor); */
+   /* text-shadow: 0px 0px 5px var(--maincolor); */
    font-size: 100%;
    align-self: center;
 }
@@ -370,12 +370,11 @@ h5{
     margin-bottom: 10px;
 }
 .progress-bar{
-    background-color: var(--themecolor);
+    background-color: var(--maincolor);
 }
   /* end about  */
 
   
-
   /* start service */
   .service{
     margin-bottom: 40px;
@@ -387,24 +386,108 @@ article{
     border-radius: 7px;
     text-align: center;
     padding: 15px;
-    transition: all .2s ;
-    
+    transition: 0.5s;    
 }
 article:hover{
-    scale: 0.9;
-    box-shadow: 0 0 7px 0 var(--themecolor);
+    box-shadow: 0 0 7px 0 var(--maincolor);
 }
 article .article-icon{
     font-size: 4rem;
-    color: var(--themecolor);
+    color: var(--maincolor);
     margin-bottom: 5px;
 
 }
   /* end service */
 
   
+
+  /* start portfolio  */
+  .portfolio{
+    margin-bottom: 40px;
+}
+.portfolio .row{
+    margin: 20px;
+}
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  img{
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  /*.gallery*/
+  .gallery{
+    width: 100%;
+    display: block;
+  }
+  .gallery .gallery-filter{
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+
+  }
+  .gallery .gallery-filter .filter-item{
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    margin:0 10px;
+    cursor: pointer;
+    line-height: 1.2;
+    transition: all 0.3s ease;
+    border: 1px solid var(--maincolor);
+    border-radius: 25px;
+    padding: 10px 25px;
+    color: var(--maincolor);
+  }
+  .gallery .gallery-filter .filter-item.active ,
+  .gallery .gallery-filter .filter-item:hover{
+    background-color: var(--maincolor);
+    color: white;
+  }
+
+  .gallery .gallery-item{
+    width: calc(100% / 3);
+    padding: 15px;
+  }
+  .gallery .gallery-item-inner img{
+    width: 100%;
+  }
+  .gallery .gallery-item.show{
+    animation: fadeIn 0.5s ease;
+  }
+  @keyframes fadeIn{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  .gallery .gallery-item.hide{
+    display: none;
+  }
+
+  @media(max-width: 991px){
+    .gallery .gallery-item{
+      width: 50%;
+    }
+  }
+  @media(max-width: 767px){
+      .gallery .gallery-item{
+      width: 100%;
+    }	
+    .gallery .gallery-filter .filter-item{
+      margin-bottom: 10px;
+    }
+  }
+
+  /* end portfolio */
   
+
   /* start contact */
+
   /* .contact{
     position: relative;
 } */
@@ -417,7 +500,7 @@ article .article-icon{
   padding: 10px  ;
   width: 90%;
   border-radius: 7px;
-  box-shadow: 0 3px 10px var(--themecolor); 
+  box-shadow: 0 3px 10px var(--maincolor); 
 } 
 
 .containerrr .content{
@@ -439,7 +522,7 @@ article .article-icon{
   right: -15px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--themecolor);
+  background-color: var(--maincolor);
 }
 .containerrr .content .left-side .details{
   margin: 14px;
@@ -447,18 +530,24 @@ article .article-icon{
 }
 .containerrr .content .left-side .details i{
   font-size: 30px;
-  color: var(--themecolor);
+  color: var(--maincolor);
   margin-bottom: 10px;
 }
 .containerrr .content .left-side .details .topic{
   font-size: 18px;
   font-weight: 500;
 }
-.containerrr .content .left-side .details  .text-one,
-.containerrr .content .left-side .details  .text-two{
+.containerrr .content .left-side .details  .text-one ,
+.containerrr .content .left-side .details  .text-two ,
+.containerrr .content .left-side .details  .text-one a,
+.containerrr .content .left-side .details  .text-two  a{
   font-size: 14px;
   color: gray;
   line-height: 20px;
+}
+.containerrr .content .left-side .details  .text-one a:hover,
+.containerrr .content .left-side .details  .text-two  a:hover{
+  color: var(--maincolor);
 }
 .containerrr .content .right-side{
   width: 75%;
@@ -466,7 +555,7 @@ article .article-icon{
 
 }
 .containerrr .content .topic-text{
-  color: var(--themecolor);
+  color: var(--maincolor);
   font-size: 34px;
   font-weight: 500;
 }
@@ -486,30 +575,16 @@ article .article-icon{
   padding: 0 15px;
   resize: none;
   border-radius: 6px;
-  caret-color: var(--themecolor);
+  caret-color: var(--maincolor);
 }
 .right-side .input-box input:focus,
 .right-side .input-box textarea:focus{
   outline: 0;
-  box-shadow: 0 0 0 0.1rem var(--themecolor);
+  box-shadow: 0 0 0 0.1rem var(--maincolor);
 }
 .message-box {
    min-height: 110px;
    margin-top: 6px;
-}
-.right-side .button input[type="button"]{
-  color: #fff;
-  font-size: 18px;
-  outline:none;
-  border: none;
-  background-color: var(--themecolor);
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.5s ;
-}
-.button input[type="button"]:hover{
-  background-color: #18048a;
 }
 
 @media only screen and (max-width: 1050px) {
@@ -537,10 +612,6 @@ article .article-icon{
   .right-side .input-box{
       height: 35px;
   }
-  .right-side .button input[type="button"]{
-      font-size: 14px;
-      padding: 8px 13px;
-  }
 }
 @media (max-width: 768px) {
 
@@ -565,27 +636,19 @@ article .article-icon{
       margin-left: 0; 
   }
 }
-
-
   /* end contact */
 
 
-/* .preloader{
-    background: #ffffff url(/images/z.gif) no-repeat center center ;
-    background-size: 15%;
-    z-index: 100;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-} */
-
-
 .btn{
-  /* outline-color: var(--themecolor); */
-  border-color: var(--themecolor);
-  color: var(--themecolor);
+  /* outline-color: var(--maincolor); */
+  border-color: var(--maincolor);
+  color: var(--maincolor);
+ 
 }
 .btn:hover{
-  background-color: var(--themecolor);
+  background-color: var(--maincolor);
   color: white;
 }
+
+
+
