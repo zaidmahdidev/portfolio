@@ -24,6 +24,7 @@
 </head>
 <body>
 
+    
     <!-- <div id="preloader"></div> -->
     
     <!-- start header -->
@@ -79,7 +80,7 @@
 
 
     <!-- start about -->
-    <section  class="about " id="about">
+    <section  class="about " id="about" >
         <div data-aos="fade-up" data-aos-offset="300"  data-aos-easing="ease-in-sine">
         <div class="text-center main-section " >
         <h1 >About Me</h1>
@@ -91,6 +92,12 @@
         </svg>
        </div>
 
+       <div class="parent " style="position: relative;">
+        <div class="child position-absolute w-50 d-none d-md-block" style="opacity:0.1; right: 0; top:-40px;">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+                <path id="blob" d="M406,290.5Q405,331,371.5,354.5Q338,378,303.5,391.5Q269,405,221.5,428Q174,451,155,401Q136,351,92.5,325.5Q49,300,63,253.5Q77,207,107,178.5Q137,150,167,129.5Q197,109,234,93.5Q271,78,318.5,80.5Q366,83,400,118Q434,153,420.5,201.5Q407,250,406,290.5Z" fill="#a29bfe"></path>
+              </svg>
+              </div>
             <div class="row m-0 " >
                 <div class="col-lg-6 col-md-6 " data-aos="fade-up" data-aos-offset="300"  data-aos-easing="ease-in-sine" >
                     <img src="images/about.jpg" class="about-img ms-5 " alt="" >
@@ -99,7 +106,7 @@
                     <p>My name is Zaid, and I am a student majoring in Information Technology. I work on developing and designing software using a variety of programming languages and technical tools. I have experience in creating desktop applications, mobile phone applications, and web applications. Additionally, I possess strong skills in managing databases and analyzing data. I always strive to improve my skills and innovate technology solutions to meet the needs of users.</p>
                 </div>
             </div>
-
+            </div>
     </section>
       <!-- end about -->
 
@@ -117,6 +124,7 @@
             </svg>
             </div>
 
+            
             <div class="row m-0  " >
                 <div class="col-lg-6 col-md-6  ">
                     <div class="skills ms-5">
@@ -358,17 +366,22 @@
                  <div class="right-side">
                     <div class="topic-text">Send Me a message </div>
                     <p id="content">If you want to know more about me or my work, or if you would just like to say hello, send me a message, I would love to hear from you </p>
-                    <form method="POST" action="https://formsubmit.com/zaidmhdi33@gmail.com">
+                    <form  action="https://formsubmit.co/zaidmhdi33@gmail.com" method="POST">
+                        <input type="text" name="honey" style="display: none;">
+                        <input type="hidden" name="_captcha" value="false">
                         <div class="input-box">
-                            <input type="text" placeholder="Enter your name " required>
+                            <input type="text" name="name"  placeholder="Enter your name " required>
                         </div>
                         <div class="input-box">
-                            <input type="email" placeholder="Enter your Email " required>
+                            <input type="text" name="phone" placeholder="Enter your phone " required>
+                        </div>
+                        <div class="input-box">
+                            <input type="email" name="email" placeholder="Enter your Email " required>
                         </div>
                         <div class="input-box message-box">
-                            <textarea  ></textarea>
+                            <textarea name="message" ></textarea>
                         </div> 
-                            <input type="submit"  value="Send Now" class="btn ">
+                            <input type="submit"  value="Send Now" class="btn" >
                     </form>
                     </div>
                 </div>
