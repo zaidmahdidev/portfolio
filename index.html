@@ -22,7 +22,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
-<body>
+<body id="body">
 
     
     <!-- <div id="preloader"></div> -->
@@ -92,7 +92,7 @@
         </svg>
        </div>
 
-       <div class="parent " style="position: relative;">
+       <div class="parent " style="position: relative;"  data-aos="fade-up">
         <div class="child position-absolute w-50 d-none d-md-block" style="opacity:0.1; right: 0; top:-40px;">
             <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
                 <path id="blob" d="M406,290.5Q405,331,371.5,354.5Q338,378,303.5,391.5Q269,405,221.5,428Q174,451,155,401Q136,351,92.5,325.5Q49,300,63,253.5Q77,207,107,178.5Q137,150,167,129.5Q197,109,234,93.5Q271,78,318.5,80.5Q366,83,400,118Q434,153,420.5,201.5Q407,250,406,290.5Z" fill="#a29bfe"></path>
@@ -100,7 +100,7 @@
               </div>
             <div class="row m-0 " >
                 <div class="col-lg-6 col-md-6 " data-aos="fade-up" data-aos-offset="300"  data-aos-easing="ease-in-sine" >
-                    <img src="images/about.jpg" class="about-img ms-5 " alt="" >
+                    <img src="images/about.png" class="about-img ms-5 " alt="" >
                 </div>
                 <div class="col-lg-6  col-md-6  col-sm-12 content" data-aos="fade-down" data-aos-offset="300"  data-aos-easing="ease-in-sine" >
                     <p>My name is Zaid, and I am a student majoring in Information Technology. I work on developing and designing software using a variety of programming languages and technical tools. I have experience in creating desktop applications, mobile phone applications, and web applications. Additionally, I possess strong skills in managing databases and analyzing data. I always strive to improve my skills and innovate technology solutions to meet the needs of users.</p>
@@ -215,6 +215,7 @@
     </div>
 
         <div class="row ">
+
          <article class="article col-lg-4" data-aos="fade-up" data-aos-offset="300"  data-aos-easing="ease-in-sine">
             <i class="fa-sharp fa-solid fa-gears article-icon"></i>
             <h3 class="article-title">Systems</h3>
@@ -235,7 +236,7 @@
             <i class="fa-solid fa-mobile-screen-button article-icon"></i>
             <h3 class="article-title">Mobile Application</h3>
             <p>Application testing to ensure its quality and smooth operation.</p>
-            <a href="#" class="btn">Read More</a>
+            <a href="#" class="btn ">Read More</a>
          </article>
 
          </div>
@@ -273,7 +274,7 @@
         <!-- gallery item start -->
         <div class="gallery-item system" data-aos="zoom-in">
             <div class="gallery-item-inner">
-                <img src="images/portfolio/system.png" class="rounded" alt="system">
+                <img src="images/portfolio/system.jpeg" class="rounded" alt="system">
             </div>
         </div>
         <!-- gallery item end -->
@@ -308,7 +309,7 @@
         <!-- gallery item start -->
         <div class="gallery-item website" data-aos="zoom-in">
             <div class="gallery-item-inner">
-                <img src="images/portfolio/website3.jpg" alt="website" class="rounded">
+                <img src="images/portfolio/website3.PNG" alt="website" class="rounded">
             </div>
         </div>
         <!-- gallery item end -->
@@ -370,16 +371,16 @@
                         <input type="text" name="honey" style="display: none;">
                         <input type="hidden" name="_captcha" value="false">
                         <div class="input-box">
-                            <input type="text" name="name"  placeholder="Enter your name " required>
+                            <input id="input1" type="text" name="name"  placeholder="Enter your name " required>
                         </div>
                         <div class="input-box">
-                            <input type="text" name="phone" placeholder="Enter your phone " required>
+                            <input id="input2"  type="text" name="phone" placeholder="Enter your phone " required>
                         </div>
                         <div class="input-box">
-                            <input type="email" name="email" placeholder="Enter your Email " required>
+                            <input id="input3" type="email" name="email" placeholder="Enter your Email " required>
                         </div>
                         <div class="input-box message-box">
-                            <textarea name="message" ></textarea>
+                            <textarea id="input4" name="message" ></textarea>
                         </div> 
                             <input type="submit"  value="Send Now" class="btn" >
                     </form>
@@ -404,6 +405,13 @@
                 <span class="color-3" onclick="setActiveStyle('color-3')"><i class="fa-solid fa-droplet "></i></span>
                 <span class="color-4" onclick="setActiveStyle('color-4')"><i class="fa-solid fa-droplet "></i></span>
                 <span class="color-5" onclick="setActiveStyle('color-5')"><i class="fa-solid fa-droplet "></i></span>
+                <div>
+                    <div class="mood">
+                    <span id="light" onclick="lig()" title="light">🌞</span>
+                    <span id="dark" onclick="da()" title="dark">🌙</span>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
         <!-- end switcher  -->
@@ -411,14 +419,26 @@
 
 
 
-
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/javascript.js"></script>
+    <script src="js/ar.js"></script>
     <script>
         AOS.init();
       </script>
     
+
+    <!-----   this for google translate  ----------->
+    <div id="google_translate_element">hh</div>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+ <script>
+    function googleTranslateElementInit(){
+        new google.translate.TranslateElement(
+            { pageLanguage: 'en' },
+        'google_translate_element'); }
+</script>
+<!--   ---------------------------------------     -->
 
 </body>
 </html>

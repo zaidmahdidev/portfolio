@@ -20,30 +20,7 @@
   a{
     text-decoration: none;
   }
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* Small */
-  @media (min-width: 768px) {
-    .container {
-      width: 750px;
-    }
-  }
-  /* Medium */
-  @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
-  /* Large */
-  @media (min-width: 1200px) {
-    .container {
-      width: 1170px;
-    }
-  }
+
   /* End Global Rules */
 
   /* start global variables */
@@ -52,6 +29,7 @@
   }
   /* end global variables */
   
+
   /* start header */
   header{
       height: 100vh;
@@ -348,10 +326,12 @@
 }
 .about-img{
     border-radius: 68% 90% 100% 63% /80% 94% 75% 89%;
-    box-shadow: 10px 20px 20px var(--maincolor);
+    box-shadow: 0px 0px 30px var(--maincolor);
     width: 300px;
     width: 70%;
     margin: 20px 20px 50px 20px;
+    background-color: var(--maincolor)
+    
 }
 .about .content{
    /* text-shadow: 0px 0px 5px var(--maincolor); */
@@ -364,7 +344,7 @@
     margin-bottom: 50px;
 }
 h5{
-    color:#2c2f3f;
+   
     font-weight: 600;
     font-size: 100%  ;
     margin-bottom: 10px;
@@ -386,16 +366,29 @@ article{
     border-radius: 7px;
     text-align: center;
     padding: 15px;
-    transition: 0.5s;    
+    transition: 0.5s;       
+
+    
 }
-article:hover{
-    box-shadow: 0 0 7px 0 var(--maincolor);
+article:hover {
+    box-shadow: 0 0 9px 0 var(--maincolor);
 }
+
 article .article-icon{
     font-size: 4rem;
     color: var(--maincolor);
     margin-bottom: 5px;
 
+}
+
+
+.btn{
+  border: 2px solid var(--maincolor);
+  color: var(--maincolor);
+}
+.btn:hover{
+  background-color: var(--maincolor);
+  color: white;
 }
   /* end service */
 
@@ -440,6 +433,8 @@ article .article-icon{
     border-radius: 25px;
     padding: 10px 25px;
     color: var(--maincolor);
+
+   
   }
   .gallery .gallery-filter .filter-item.active ,
   .gallery .gallery-filter .filter-item:hover{
@@ -450,7 +445,9 @@ article .article-icon{
   .gallery .gallery-item{
     width: calc(100% / 3);
     padding: 15px;
+
   }
+
   .gallery .gallery-item-inner img{
     width: 100%;
   }
@@ -639,16 +636,23 @@ article .article-icon{
   /* end contact */
 
 
-.btn{
-  /* outline-color: var(--maincolor); */
-  border-color: var(--maincolor);
-  color: var(--maincolor);
- 
-}
-.btn:hover{
-  background-color: var(--maincolor);
+
+
+
+/* body{
+  background-color: #2c2f3f;
   color: white;
+} */
+.mood{
+  margin: 10px 30px;
 }
-
-
-
+#light , #dark{
+  font-size: 18px;
+  border-radius:20px;
+  background-color: whitesmoke;
+  padding: 5px;
+  cursor: pointer;
+}
+#dark{
+        background-color: #040b14;
+}

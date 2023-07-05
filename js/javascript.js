@@ -63,6 +63,25 @@ function setActiveStyle(color){
     })
 }
 
+//   mood  
+
+function da(){
+  document.getElementById('body').style.backgroundColor='#212224';
+  document.getElementById('body').style.color='white';
+  document.getElementById('input1').style.backgroundColor='#303032';
+  document.getElementById('input2').style.backgroundColor='#303032';
+  document.getElementById('input3').style.backgroundColor='#303032';
+  document.getElementById('input4').style.backgroundColor='#303032';
+}
+function lig(){
+  document.getElementById('body').style.backgroundColor='white';
+  document.getElementById('body').style.color='black';
+  document.getElementById('input1').style.backgroundColor='#f0f1f8';
+  document.getElementById('input2').style.backgroundColor='#f0f1f8';
+  document.getElementById('input3').style.backgroundColor='#f0f1f8';
+  document.getElementById('input4').style.backgroundColor='#f0f1f8';
+}
+
 
 //   portfolio
 
@@ -88,8 +107,5 @@ filterContainer.addEventListener("click", (event) =>{
      });
   }
 });
-
-
-
 
 
