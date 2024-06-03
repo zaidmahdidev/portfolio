@@ -1,0 +1,8 @@
+:root{
+    --maincolor: #ea2828;
+}
+
+*::selection{
+    background-color: #ea2828;
+    color: white;
+}
