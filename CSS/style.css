@@ -49,12 +49,11 @@
       text-align: center;
       margin: 10px 0;
   }
-  header .profile img {
-    width: clamp(60px, 15vw, 120px);  /* لا تقل عن 60px ولا تزيد عن 120px */
-    height: clamp(60px, 15vw, 120px);
-    border-radius: 50%;
-    border: 3px solid var(--maincolor);
-    object-fit: cover;
+  header .profile img{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;    border: 3px solid var(--maincolor);
   }
   header .profile h1{
       color: white;
