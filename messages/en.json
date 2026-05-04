@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "title": "Zaid Mahdi — Flutter & Mobile App Developer",
+    "description": "Zaid Mahdi builds polished cross-platform mobile apps with Flutter: UI/UX, Bloc, REST APIs, Firebase, and performance-first delivery."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "cv": "CV"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you’re looking for doesn’t exist or was moved.",
+    "home": "Back to home"
+  },
+  "hero": {
+    "eyebrow": "Mobile application developer",
+    "greeting": "Hi, I’m",
+    "name": "Zaid Mahdi",
+    "role": "I craft production-ready apps with Flutter & Dart",
+    "summary": "From product thinking to smooth UI, state management, and reliable APIs — I turn ideas into fast, beautiful mobile experiences.",
+    "primaryCta": "View work",
+    "secondaryCta": "Get in touch",
+    "stackTag": "FLUTTER · DART · MOBILE",
+    "stats": {
+      "focus": "Focus",
+      "focusValue": "Flutter",
+      "stack": "Stack",
+      "stackValue": "Dart · Bloc",
+      "delivery": "Ship",
+      "deliveryValue": "Quality-first"
+    }
+  },
+  "about": {
+    "label": "About",
+    "title": "I build mobile products end-to-end",
+    "body1": "I’m Zaid — a mobile application developer with experience shipping real-world apps using Flutter. I care about clear UI, maintainable architecture, and performance you can feel in every frame.",
+    "body2": "My work spans UI/UX implementation, state management (Bloc), REST integration, local persistence, and Firebase-backed features. I enjoy collaborating with teams and keeping up with the latest in mobile development so every release feels modern and maintainable.",
+    "highlights": {
+      "h1": { "t": "Product clarity", "d": "Simple flows, strong hierarchy, and fast navigation." },
+      "h2": { "t": "Engineering quality", "d": "Clean structure, testable modules, and predictable state." },
+      "h3": { "t": "Polish", "d": "Micro-interactions, performance, and attention to detail." }
+    }
+  },
+  "projects": {
+    "label": "Work",
+    "title": "Selected app showcases",
+    "subtitle": "A few projects that represent my approach: mobile-first, modern, and built to scale.",
+    "cardHint": "Flutter showcase",
+    "view": "View",
+    "items": {
+      "agriculture": {
+        "title": "Agriculture",
+        "description": "A field-ready experience with a clear task flow and reliable data presentation."
+      },
+      "dairy": {
+        "title": "Dairy",
+        "description": "Product-focused UI with an emphasis on tracking and day-to-day usability."
+      },
+      "diesel": {
+        "title": "Diesel",
+        "description": "Fast navigation and a clean dashboard for operational workflows."
+      },
+      "advisor": {
+        "title": "Agricultural Advisor",
+        "description": "Guided experiences and structured content for better decision making."
+      },
+      "alahally": {
+        "title": "Alahally",
+        "description": "A refined client app with strong visual identity and smooth interactions."
+      },
+      "thikr": {
+        "title": "Thikr",
+        "description": "A calm, focused interface designed for daily use and consistency."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let’s build your next app",
+    "intro": "Tell me about your product, timeline, and goals. I’ll get back to you with next steps.",
+    "form": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message",
+      "placeholderName": "Your name",
+      "placeholderPhone": "Your phone",
+      "placeholderEmail": "you@email.com",
+      "placeholderMessage": "What are you building?"
+    },
+    "details": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    }
+  },
+  "footer": {
+    "built": "Built with Next.js & Tailwind",
+    "rights": "All rights reserved.",
+    "cv": "Resume (PDF)"
+  },
+  "theme": {
+    "system": "System theme",
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "aria": "Color theme"
+  },
+  "cv": {
+    "view": "View CV",
+    "download": "Download CV",
+    "hint": "Opens PDF"
+  },
+  "language": {
+    "en": "EN",
+    "ar": "AR"
+  }
+}
