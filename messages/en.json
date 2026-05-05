@@ -39,9 +39,18 @@
     "body1": "I’m Zaid — a mobile application developer with experience shipping real-world apps using Flutter. I care about clear UI, maintainable architecture, and performance you can feel in every frame.",
     "body2": "My work spans UI/UX implementation, state management (Bloc), REST integration, local persistence, and Firebase-backed features. I enjoy collaborating with teams and keeping up with the latest in mobile development so every release feels modern and maintainable.",
     "highlights": {
-      "h1": { "t": "Product clarity", "d": "Simple flows, strong hierarchy, and fast navigation." },
-      "h2": { "t": "Engineering quality", "d": "Clean structure, testable modules, and predictable state." },
-      "h3": { "t": "Polish", "d": "Micro-interactions, performance, and attention to detail." }
+      "h1": {
+        "t": "Product clarity",
+        "d": "Simple flows, strong hierarchy, and fast navigation."
+      },
+      "h2": {
+        "t": "Engineering quality",
+        "d": "Clean structure, testable modules, and predictable state."
+      },
+      "h3": {
+        "t": "Polish",
+        "d": "Micro-interactions, performance, and attention to detail."
+      }
     }
   },
   "projects": {
@@ -99,7 +108,6 @@
     }
   },
   "footer": {
-    "built": "Built with Next.js & Tailwind",
     "rights": "All rights reserved.",
     "cv": "Resume (PDF)"
   },

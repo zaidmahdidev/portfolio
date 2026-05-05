@@ -24,7 +24,6 @@ export function SiteFooter() {
             {t("cv")}
           </a>
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-500">{t("built")}</p>
       </div>
     </footer>
   );

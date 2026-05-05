@@ -47,19 +47,14 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:gap-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="group flex min-w-0 items-center gap-2 text-sm font-semibold tracking-tight text-slate-900 dark:text-white"
+          className="group flex items-center gap-2.5"
         >
-          <span className="relative size-9 shrink-0 overflow-hidden rounded-2xl ring-2 ring-cyan-500/30 ring-offset-2 ring-offset-white transition group-hover:ring-cyan-500/50 dark:ring-cyan-400/35 dark:ring-offset-slate-950">
-            <Image
-              src={PROFILE_IMAGE_SRC}
-              alt={person.name}
-              fill
-              className="object-cover object-top"
-              sizes="36px"
-              priority
-            />
+          <span className="flex size-9 items-center justify-center rounded-lg bg-slate-900 text-sm font-bold tracking-tight text-white transition-colors dark:bg-white dark:text-slate-900">
+            ZM
           </span>
-          <span className="hidden sm:inline">{person.name}</span>
+          <span className="hidden text-base font-bold tracking-tight text-slate-900 transition-colors group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-400 sm:inline">
+            Zaid Mahdi
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
