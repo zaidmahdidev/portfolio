@@ -26,28 +26,7 @@ export function HeroSection() {
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8">
         <div className="lg:col-span-7">
-          <motion.div
-            className="mb-6 flex items-center gap-4 sm:mb-8"
-            initial={reduce ? false : { opacity: 0, y: 10 }}
-            animate={reduce ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease }}
-          >
-            <div className="relative size-20 shrink-0 overflow-hidden rounded-2xl ring-2 ring-cyan-500/25 ring-offset-2 ring-offset-slate-50 shadow-lg dark:ring-cyan-400/30 dark:ring-offset-slate-950 sm:size-24">
-              <Image
-                src={PROFILE_IMAGE_SRC}
-                alt={person.name}
-                fill
-                className="object-cover object-[center_22%]"
-                sizes="(max-width: 640px) 80px, 96px"
-                priority
-              />
-            </div>
-            <div className="min-w-0">
-              <p className="text-sm font-semibold tracking-wide text-cyan-700 dark:text-cyan-300/90">
-                {t("eyebrow")}
-              </p>
-            </div>
-          </motion.div>
+
 
           <motion.h1
             className="mt-2 text-4xl font-semibold leading-[1.05] tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl"
