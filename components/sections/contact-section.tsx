@@ -121,18 +121,20 @@ export function ContactSection() {
           whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.55, ease }}
-          className="max-w-3xl"
+          className="max-w-3xl ltr:text-left rtl:text-right"
         >
-          <p className="text-sm font-semibold tracking-wide text-cyan-700 dark:text-cyan-300/90">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-400">
             {t("label")}
           </p>
           <h2
             id="contact-title"
-            className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-4xl"
+            className="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl"
           >
             {t("title")}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">{t("intro")}</p>
+          <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
+            {t("intro")}
+          </p>
         </motion.div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:items-start">

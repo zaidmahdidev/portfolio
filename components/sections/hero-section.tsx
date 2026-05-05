@@ -29,13 +29,13 @@ export function HeroSection() {
 
 
           <motion.h1
-            className="mt-2 text-4xl font-semibold leading-[1.05] tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl"
+            className="mt-2 pb-2 text-4xl font-semibold leading-[1.2] tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl"
             initial={reduce ? false : { opacity: 0, y: 14 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease, delay: 0.05 }}
           >
             <span className="block text-slate-600 dark:text-slate-300">{t("greeting")}</span>
-            <span className="mt-2 block bg-gradient-to-r from-slate-900 via-cyan-700 to-violet-700 bg-clip-text text-transparent dark:from-white dark:via-cyan-100 dark:to-violet-200">
+            <span className="mt-2 block bg-gradient-to-r from-slate-900 via-cyan-700 to-violet-700 bg-clip-text py-1 text-transparent dark:from-white dark:via-cyan-100 dark:to-violet-200">
               {t("name")}
             </span>
           </motion.h1>

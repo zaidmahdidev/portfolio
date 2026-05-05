@@ -7,13 +7,13 @@ import { projectAssets, projectIds, type ProjectId } from "@/lib/projects";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const accentRing: Record<(typeof projectAssets)[ProjectId]["accent"], string> = {
-  emerald: "from-emerald-400/35 to-emerald-400/0",
-  sky: "from-sky-400/35 to-sky-400/0",
-  amber: "from-amber-400/35 to-amber-400/0",
-  violet: "from-violet-400/35 to-violet-400/0",
-  rose: "from-rose-400/35 to-rose-400/0",
-  cyan: "from-cyan-400/35 to-cyan-400/0",
+const accentColors: Record<(typeof projectAssets)[ProjectId]["accent"], { light: string; dark: string; glow: string }> = {
+  emerald: { light: "bg-emerald-500", dark: "dark:bg-emerald-400", glow: "shadow-emerald-500/20" },
+  sky: { light: "bg-sky-500", dark: "dark:bg-sky-400", glow: "shadow-sky-500/20" },
+  amber: { light: "bg-amber-500", dark: "dark:bg-amber-400", glow: "shadow-amber-500/20" },
+  violet: { light: "bg-violet-500", dark: "dark:bg-violet-400", glow: "shadow-violet-500/20" },
+  rose: { light: "bg-rose-500", dark: "dark:bg-rose-400", glow: "shadow-rose-500/20" },
+  cyan: { light: "bg-cyan-500", dark: "dark:bg-cyan-400", glow: "shadow-cyan-500/20" },
 };
 
 export function ProjectsSection() {
@@ -32,18 +32,18 @@ export function ProjectsSection() {
           whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.55, ease }}
-          className="max-w-3xl"
+          className="max-w-3xl ltr:text-left rtl:text-right"
         >
-          <p className="text-sm font-semibold tracking-wide text-cyan-700 dark:text-cyan-300/90">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-400">
             {t("label")}
           </p>
           <h2
             id="projects-title"
-            className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-4xl"
+            className="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl"
           >
             {t("title")}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
+          <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
             {t("subtitle")}
           </p>
         </motion.div>
@@ -73,52 +73,80 @@ function ProjectCard({
   reduce: boolean;
 }) {
   const t = useTranslations("projects");
-  const cardHint = t("cardHint");
   const asset = projectAssets[id];
   const title = t(`items.${id}.title`);
   const description = t(`items.${id}.description`);
+  const colors = accentColors[asset.accent];
 
   return (
     <motion.article
-      initial={reduce ? false : { opacity: 0, y: 18 }}
+      initial={reduce ? false : { opacity: 0, y: 20 }}
       whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10%" }}
-      transition={{ duration: 0.55, ease, delay: index * 0.03 }}
-      className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/60 shadow-[0_20px_80px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-white/[0.03] dark:shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+      viewport={{ once: true, margin: "-5%" }}
+      transition={{ duration: 0.5, ease, delay: index * 0.1 }}
+      className="group relative h-full"
     >
-      <div
-        className={`pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${accentRing[asset.accent]} opacity-70`}
-        aria-hidden
-      />
+      <div className={`relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200/60 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-500/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:border-white/5 dark:bg-slate-900/50 dark:shadow-none dark:hover:bg-slate-900 dark:hover:border-white/20 group-hover:shadow-cyan-500/10`}>
+        
+        {/* Background Glow on Hover */}
+        <div className={`absolute -inset-px opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-gradient-to-br from-cyan-500/5 via-transparent to-violet-500/5 pointer-events-none`} />
 
-      <div className="relative p-4">
-        <div className="relative aspect-[10/16] w-full max-w-[220px] mx-auto overflow-hidden rounded-[2rem] border border-slate-200/90 bg-slate-100 shadow-inner shadow-slate-900/10 dark:border-white/10 dark:bg-slate-950 dark:shadow-black/60">
-          <div className="absolute inset-x-8 top-3 h-4 rounded-full bg-slate-900/25 ring-1 ring-slate-900/10 dark:bg-black/55 dark:ring-white/10" />
+        {/* Image Container */}
+        <div className="relative aspect-[16/10] w-full overflow-hidden">
           <Image
             src={asset.image}
             alt={title}
             fill
-            sizes="(min-width: 1024px) 240px, (min-width: 640px) 45vw, 70vw"
-            className="object-cover transition duration-500 group-hover:scale-[1.03]"
+            sizes="(min-width: 1024px) 400px, 100vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             priority={index < 2}
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/25 via-transparent to-transparent dark:from-slate-950/55" />
+          {/* Subtle Overlay Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         </div>
 
-        <div className="mt-5 px-1 pb-2">
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                {description}
-              </p>
+        {/* Content */}
+        <div className="flex flex-1 flex-col p-6 lg:p-8 relative z-10">
+          <div className="flex items-center gap-2">
+            <div className={`h-1.5 w-1.5 rounded-full ${colors.light} ${colors.dark} group-hover:animate-pulse`} />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+              {t("cardHint")}
+            </span>
+          </div>
+
+          <h3 className="mt-3 text-xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-2xl transition-colors duration-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-400">
+            {title}
+          </h3>
+
+          <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400 sm:text-base">
+            {description}
+          </p>
+
+          <div className="mt-8 flex items-center justify-between border-t border-slate-100 pt-6 dark:border-white/5">
+             <div className="flex items-center gap-1.5 text-sm font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
+              <span className="relative overflow-hidden">
+                <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full">
+                  {t("view")}
+                </span>
+                <span className="absolute left-0 top-0 inline-block translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                  {t("view")}
+                </span>
+              </span>
+              <svg 
+                className="size-4 transition-all duration-300 group-hover:translate-x-1" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
+              >
+                <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+              </svg>
             </div>
           </div>
-          <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-cyan-700 opacity-0 transition group-hover:opacity-100 dark:text-cyan-200/90">
-            <span className="inline-block size-1.5 rounded-full bg-cyan-600 dark:bg-cyan-300" />
-            {cardHint}
-          </div>
         </div>
+
+        {/* Bottom Accent Glow Line */}
+        <div 
+          className={`absolute bottom-0 left-0 h-1.5 w-0 transition-all duration-500 group-hover:w-full ${colors.light} ${colors.dark} shadow-[0_0_15px_rgba(6,182,212,0.5)]`}
+        />
       </div>
     </motion.article>
   );

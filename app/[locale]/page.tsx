@@ -3,6 +3,8 @@ import { AboutSection } from "@/components/sections/about-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
+import { SkillsSection } from "@/components/sections/skills-section";
+import { ServicesSection } from "@/components/sections/services-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { setRequestLocale } from "next-intl/server";
 
@@ -18,6 +20,8 @@ export default async function HomePage({ params }: Props) {
       <main className="relative z-0">
         <HeroSection />
         <AboutSection />
+        <SkillsSection />
+        <ServicesSection />
         <ProjectsSection />
         <ContactSection />
       </main>

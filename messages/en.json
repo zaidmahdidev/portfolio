@@ -7,6 +7,8 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
+    "skills": "Skills",
+    "services": "Services",
     "contact": "Contact",
     "cv": "CV"
   },
@@ -35,21 +37,68 @@
   },
   "about": {
     "label": "About",
-    "title": "I build mobile products end-to-end",
-    "body1": "I’m Zaid — a mobile application developer with experience shipping real-world apps using Flutter. I care about clear UI, maintainable architecture, and performance you can feel in every frame.",
-    "body2": "My work spans UI/UX implementation, state management (Bloc), REST integration, local persistence, and Firebase-backed features. I enjoy collaborating with teams and keeping up with the latest in mobile development so every release feels modern and maintainable.",
+    "title": "Professional Mobile App Developer",
+    "body1": "My name is Zaid, and I am a Mobile Application developer with over a year of experience in mobile application development. I have a strong proficiency in the use of the Flutter framework, allowing me to create efficient, beautiful, and highly functional mobile applications.",
+    "body2": "My experience spans various aspects of app development, including UI/UX design, state management, API integration, and performance optimization. I excel at turning complex requirements into user-friendly applications, ensuring a seamless user experience.",
+    "body3": "In addition to my technical skills, I am passionate about learning and staying up-to-date with the latest trends and advancements in mobile development. This drive allows me to incorporate cutting-edge features and best practices into my projects, delivering top-notch applications.",
     "highlights": {
       "h1": {
-        "t": "Product clarity",
-        "d": "Simple flows, strong hierarchy, and fast navigation."
+        "t": "Collaborative",
+        "d": "Successfully worked on multiple projects, collaborating with teams and clients."
       },
       "h2": {
-        "t": "Engineering quality",
-        "d": "Clean structure, testable modules, and predictable state."
+        "t": "Quality First",
+        "d": "Commitment to quality and attention to detail ensures highest standards."
       },
       "h3": {
-        "t": "Polish",
-        "d": "Micro-interactions, performance, and attention to detail."
+        "t": "Modern Tech",
+        "d": "Incorporating cutting-edge features and best practices into every project."
+      }
+    }
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "Technical & Soft Skills",
+    "subtitle": "I fell in love with programming, and I have at least learnt something.",
+    "technical": {
+      "title": "Technical Skills",
+      "items": {
+        "flutter": "Flutter & Dart",
+        "uiux": "UI/UX",
+        "bloc": "State Management: Bloc",
+        "api": "Rest API",
+        "db": "Database: Hive, SQLite, SharedPreferences",
+        "firebase": "Firebase"
+      }
+    },
+    "soft": {
+      "title": "Soft Skills",
+      "items": {
+        "problem": "Problem Solving",
+        "learner": "Fast Learner",
+        "creative": "Creative Thinking",
+        "detail": "Attention to Detail",
+        "comm": "Communication",
+        "continuous": "Continuous Learning"
+      }
+    }
+  },
+  "services": {
+    "label": "Services",
+    "title": "My Services",
+    "subtitle": "My goal is customer satisfaction",
+    "items": {
+      "systems": {
+        "title": "Systems",
+        "description": "Analyzing customer requirements and designing a system that meets their needs."
+      },
+      "websites": {
+        "title": "Websites",
+        "description": "New updates and additions to the services available on Websites."
+      },
+      "apps": {
+        "title": "Mobile Applications",
+        "description": "Application testing to ensure its quality and smooth operation."
       }
     }
   },
@@ -57,32 +106,32 @@
     "label": "Work",
     "title": "Selected app showcases",
     "subtitle": "A few projects that represent my approach: mobile-first, modern, and built to scale.",
-    "cardHint": "Flutter showcase",
-    "view": "View",
+    "cardHint": "Mobile Application",
+    "view": "Explore Project",
     "items": {
       "agriculture": {
         "title": "Agriculture",
-        "description": "A field-ready experience with a clear task flow and reliable data presentation."
+        "description": "This application was made for a company specialized in the trade of fertilizers and pesticides."
       },
       "dairy": {
-        "title": "Dairy",
-        "description": "Product-focused UI with an emphasis on tracking and day-to-day usability."
+        "title": "Dairy Unit Management System",
+        "description": "Comprehensive system for managing milk collection & distribution for the Ministry of Agriculture. Features: Multi-stakeholder apps for tracking milk production, delivery, and quality control."
       },
       "diesel": {
-        "title": "Diesel",
-        "description": "Fast navigation and a clean dashboard for operational workflows."
+        "title": "Diesel Unit Management System",
+        "description": "Mobile app for monitoring national fuel inventory and distribution. Features: Real-time inventory tracking, station management, notifications."
       },
       "advisor": {
         "title": "Agricultural Advisor",
-        "description": "Guided experiences and structured content for better decision making."
+        "description": "The goal of this application is to assist farmers in agriculture."
       },
       "alahally": {
-        "title": "Alahally",
-        "description": "A refined client app with strong visual identity and smooth interactions."
+        "title": "Blood Donation App – \"رابطة الاهالي\"",
+        "description": "Connecting blood donors with recipients through a real-time donor directory. Features: Search by blood type, real-time notifications, dark/light mode."
       },
       "thikr": {
-        "title": "Thikr",
-        "description": "A calm, focused interface designed for daily use and consistency."
+        "title": "Islamic App – \"ذكر\"",
+        "description": "A comprehensive Islamic app featuring Quran reading, daily prayers, and supplications. Features: Offline mode, Adhkar & Hadith collections, accurate Qibla direction."
       }
     }
   },
