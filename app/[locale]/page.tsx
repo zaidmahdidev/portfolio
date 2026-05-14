@@ -4,7 +4,6 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { SkillsSection } from "@/components/sections/skills-section";
-import { ServicesSection } from "@/components/sections/services-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { setRequestLocale } from "next-intl/server";
 
@@ -17,11 +16,10 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <SiteHeader />
-      <main className="relative z-0">
+      <main className="relative z-0 overflow-x-hidden">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
-        <ServicesSection />
         <ProjectsSection />
         <ContactSection />
       </main>

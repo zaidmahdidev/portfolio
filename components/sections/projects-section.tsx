@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { projectAssets, projectIds, type ProjectId } from "@/lib/projects";
 
+import { SectionHeading } from "@/components/ui/section-heading";
+
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const accentColors: Record<(typeof projectAssets)[ProjectId]["accent"], { light: string; dark: string; glow: string }> = {
@@ -21,34 +23,16 @@ export function ProjectsSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section
-      id="projects"
-      className="scroll-mt-28 py-20 sm:scroll-mt-24 sm:py-24"
-      aria-labelledby="projects-title"
-    >
+    <section id="projects" className="section-a scroll-mt-24 py-24 sm:py-32" aria-labelledby="projects-title">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 16 }}
-          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.55, ease }}
-          className="max-w-3xl ltr:text-left rtl:text-right"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: reduce ? 0 : 0.6, ease }}
         >
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-400">
-            {t("label")}
-          </p>
-          <h2
-            id="projects-title"
-            className="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl"
-          >
-            {t("title")}
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
-            {t("subtitle")}
-          </p>
+          <SectionHeading title={t("title")} subtitle={t("subtitle")} center />
         </motion.div>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projectIds.map((id, index) => (
             <ProjectCard
               key={id}

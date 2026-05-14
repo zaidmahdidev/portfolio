@@ -6,154 +6,107 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "projects": "Projects",
     "skills": "Skills",
-    "services": "Services",
+    "projects": "Projects",
     "contact": "Contact",
     "cv": "CV"
   },
   "notFound": {
     "title": "Page not found",
-    "description": "The page you’re looking for doesn’t exist or was moved.",
+    "description": "The page you're looking for doesn't exist or was moved.",
     "home": "Back to home"
   },
   "hero": {
     "eyebrow": "Mobile application developer",
-    "greeting": "Hi, I’m",
+    "greeting": "Hi, I'm",
     "name": "Zaid Mahdi",
-    "role": "I craft production-ready apps with Flutter & Dart",
-    "summary": "From product thinking to smooth UI, state management, and reliable APIs — I turn ideas into fast, beautiful mobile experiences.",
-    "primaryCta": "View work",
-    "secondaryCta": "Get in touch",
-    "stackTag": "FLUTTER · DART · MOBILE",
-    "stats": {
-      "focus": "Focus",
-      "focusValue": "Flutter",
-      "stack": "Stack",
-      "stackValue": "Dart · Bloc",
-      "delivery": "Ship",
-      "deliveryValue": "Quality-first"
-    }
+    "role": "Flutter & Mobile App Developer",
+    "summary": "I craft production-ready mobile apps with Flutter — from clean architecture and smooth UI to reliable APIs and Firebase integration.",
+    "primaryCta": "View Work",
+    "secondaryCta": "Get in Touch",
+    "cvView": "View CV",
+    "cvDownload": "Download CV"
   },
   "about": {
     "label": "About",
-    "title": "Professional Mobile App Developer",
-    "body1": "My name is Zaid, and I am a Mobile Application developer with over a year of experience in mobile application development. I have a strong proficiency in the use of the Flutter framework, allowing me to create efficient, beautiful, and highly functional mobile applications.",
-    "body2": "My experience spans various aspects of app development, including UI/UX design, state management, API integration, and performance optimization. I excel at turning complex requirements into user-friendly applications, ensuring a seamless user experience.",
-    "body3": "In addition to my technical skills, I am passionate about learning and staying up-to-date with the latest trends and advancements in mobile development. This drive allows me to incorporate cutting-edge features and best practices into my projects, delivering top-notch applications.",
-    "highlights": {
-      "h1": {
-        "t": "Collaborative",
-        "d": "Successfully worked on multiple projects, collaborating with teams and clients."
-      },
-      "h2": {
-        "t": "Quality First",
-        "d": "Commitment to quality and attention to detail ensures highest standards."
-      },
-      "h3": {
-        "t": "Modern Tech",
-        "d": "Incorporating cutting-edge features and best practices into every project."
-      }
-    }
+    "title": "About Me",
+    "body1": "I'm Zaid, a Mobile Application Developer with hands-on experience building production-ready apps using Flutter & Dart. I focus on clean architecture, smooth UI, and reliable performance across Android and iOS.",
+    "body2": "My work spans UI/UX design, state management with Bloc/GetX, REST API integration, Firebase, and automated testing. I care deeply about code quality, maintainability, and delivering apps that users love.",
+    "body3": "I'm always learning — keeping up with the latest in mobile development, CI/CD pipelines, and best practices to bring modern, scalable solutions to every project."
   },
   "skills": {
     "label": "Skills",
-    "title": "Technical & Soft Skills",
-    "subtitle": "I fell in love with programming, and I have at least learnt something.",
-    "technical": {
-      "title": "Technical Skills",
-      "items": {
-        "flutter": "Flutter & Dart",
-        "uiux": "UI/UX",
-        "bloc": "State Management: Bloc",
-        "api": "Rest API",
-        "db": "Database: Hive, SQLite, SharedPreferences",
-        "firebase": "Firebase"
-      }
-    },
-    "soft": {
-      "title": "Soft Skills",
-      "items": {
-        "problem": "Problem Solving",
-        "learner": "Fast Learner",
-        "creative": "Creative Thinking",
-        "detail": "Attention to Detail",
-        "comm": "Communication",
-        "continuous": "Continuous Learning"
-      }
-    }
-  },
-  "services": {
-    "label": "Services",
-    "title": "My Services",
-    "subtitle": "My goal is customer satisfaction",
+    "title": "What I work with",
+    "subtitle": "A focused set of tools and practices I use to build reliable, scalable mobile apps.",
     "items": {
-      "systems": {
-        "title": "Systems",
-        "description": "Analyzing customer requirements and designing a system that meets their needs."
-      },
-      "websites": {
-        "title": "Websites",
-        "description": "New updates and additions to the services available on Websites."
-      },
-      "apps": {
-        "title": "Mobile Applications",
-        "description": "Application testing to ensure its quality and smooth operation."
-      }
+      "flutter": "Flutter & Dart",
+      "unittest": "Unit Testing",
+      "git": "Git & GitHub",
+      "uiux": "Responsive UI/UX",
+      "devtools": "DevTools & Performance Profiling",
+      "api": "REST API Integration",
+      "firebase": "Firebase",
+      "cicd": "CI/CD · GitHub Actions · Fastlane",
+      "architecture": "Clean Architecture",
+      "automated": "Automated Testing",
+      "state": "Bloc / Cubit / GetX",
+      "db": "Hive / SQL / SQLite",
+      "solid": "SOLID Principles",
+      "security": "App Security",
+      "figma": "Figma"
     }
   },
   "projects": {
     "label": "Work",
-    "title": "Selected app showcases",
-    "subtitle": "A few projects that represent my approach: mobile-first, modern, and built to scale.",
+    "title": "Projects",
+    "subtitle": "A few projects that represent my approach — mobile-first, modern, and built to scale.",
     "cardHint": "Mobile Application",
-    "view": "Explore Project",
+    "view": "Explore",
     "items": {
       "agriculture": {
         "title": "Agriculture",
-        "description": "This application was made for a company specialized in the trade of fertilizers and pesticides."
+        "description": "App for a company specialized in the trade of fertilizers and pesticides."
       },
       "dairy": {
-        "title": "Dairy Unit Management System",
-        "description": "Comprehensive system for managing milk collection & distribution for the Ministry of Agriculture. Features: Multi-stakeholder apps for tracking milk production, delivery, and quality control."
+        "title": "Dairy Unit Management",
+        "description": "Comprehensive system for managing milk collection & distribution for the Ministry of Agriculture, with multi-stakeholder tracking and quality control."
       },
       "diesel": {
-        "title": "Diesel Unit Management System",
-        "description": "Mobile app for monitoring national fuel inventory and distribution. Features: Real-time inventory tracking, station management, notifications."
+        "title": "Diesel Unit Management",
+        "description": "Mobile app for monitoring national fuel inventory and distribution with real-time tracking and station management."
       },
       "advisor": {
         "title": "Agricultural Advisor",
-        "description": "The goal of this application is to assist farmers in agriculture."
+        "description": "An app designed to assist farmers with agricultural guidance and recommendations."
       },
       "alahally": {
-        "title": "Blood Donation App – \"رابطة الاهالي\"",
-        "description": "Connecting blood donors with recipients through a real-time donor directory. Features: Search by blood type, real-time notifications, dark/light mode."
+        "title": "Blood Donation — رابطة الاهالي",
+        "description": "Connecting blood donors with recipients through a real-time donor directory with blood type search and instant notifications."
       },
       "thikr": {
-        "title": "Islamic App – \"ذكر\"",
-        "description": "A comprehensive Islamic app featuring Quran reading, daily prayers, and supplications. Features: Offline mode, Adhkar & Hadith collections, accurate Qibla direction."
+        "title": "Islamic App — ذكر",
+        "description": "A comprehensive Islamic app with Quran reading, daily Adhkar, Hadith collections, and accurate Qibla direction. Fully offline."
       }
     }
   },
   "contact": {
     "label": "Contact",
-    "title": "Let’s build your next app",
-    "intro": "Tell me about your product, timeline, and goals. I’ll get back to you with next steps.",
+    "title": "Contact",
+    "intro": "Have a project in mind? I'd love to hear about it. Send me a message and I'll get back to you.",
     "form": {
       "name": "Name",
       "phone": "Phone",
       "email": "Email",
       "message": "Message",
-      "submit": "Send message",
+      "submit": "Send Message",
       "placeholderName": "Your name",
-      "placeholderPhone": "Your phone",
+      "placeholderPhone": "Your phone number",
       "placeholderEmail": "you@email.com",
-      "placeholderMessage": "What are you building?"
+      "placeholderMessage": "Tell me about your project..."
     },
     "details": {
       "email": "Email",
-      "phone": "Phone",
-      "location": "Location"
+      "phone": "Phone"
     }
   },
   "footer": {

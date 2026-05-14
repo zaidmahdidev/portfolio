@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const navKeys = ["home", "about", "skills", "services", "projects", "contact"] as const;
+const navKeys = ["home", "about", "skills", "projects", "contact"] as const;
 
 export function SiteHeader() {
   const t = useTranslations("nav");
@@ -26,17 +26,11 @@ export function SiteHeader() {
   const links = navKeys.map((key) => ({
     key,
     href:
-      key === "home"
-        ? "#top"
-        : key === "about"
-          ? "#about"
-          : key === "skills"
-            ? "#skills"
-            : key === "services"
-              ? "#services"
-              : key === "projects"
-                ? "#projects"
-                : "#contact",
+      key === "home" ? "#top"
+      : key === "about" ? "#about"
+      : key === "skills" ? "#skills"
+      : key === "projects" ? "#projects"
+      : "#contact",
     label: t(key),
   }));
 
