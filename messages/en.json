@@ -20,8 +20,8 @@
     "eyebrow": "Mobile application developer",
     "greeting": "Hi, I'm",
     "name": "Zaid Mahdi",
-    "role": "Flutter & Mobile App Developer",
-    "summary": "I craft production-ready mobile apps with Flutter — from clean architecture and smooth UI to reliable APIs and Firebase integration.",
+    "role": "Mobile Application Developer",
+    "summary": "I build polished, production-ready mobile apps focused on performance, clarity, and a smooth user experience from first launch to long-term growth.",
     "primaryCta": "View Work",
     "secondaryCta": "Get in Touch",
     "cvView": "View CV",
@@ -30,9 +30,9 @@
   "about": {
     "label": "About",
     "title": "About Me",
-    "body1": "I'm Zaid, a Mobile Application Developer with hands-on experience building production-ready apps using Flutter & Dart. I focus on clean architecture, smooth UI, and reliable performance across Android and iOS.",
-    "body2": "My work spans UI/UX design, state management with Bloc/GetX, REST API integration, Firebase, and automated testing. I care deeply about code quality, maintainability, and delivering apps that users love.",
-    "body3": "I'm always learning — keeping up with the latest in mobile development, CI/CD pipelines, and best practices to bring modern, scalable solutions to every project."
+    "body1": "I'm Zaid, a mobile application developer with hands-on experience delivering apps that are stable, scalable, and ready for real users.",
+    "body2": "My work combines thoughtful product design, strong architecture, and dependable integrations to create experiences that feel fast and intuitive.",
+    "body3": "I care deeply about code quality, long-term maintainability, and continuous improvement, so every project ships with confidence and grows with ease."
   },
   "skills": {
     "label": "Skills",
