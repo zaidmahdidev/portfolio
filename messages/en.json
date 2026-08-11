@@ -86,6 +86,14 @@
       "thikr": {
         "title": "Islamic App — ذكر",
         "description": "A comprehensive Islamic app with Quran reading, daily Adhkar, Hadith collections, and accurate Qibla direction. Fully offline."
+      },
+      "topmedia": {
+        "title": "Top Media Store",
+        "description": "A comprehensive e-commerce store with a modern Glass UI for purchasing luxury gifts and antiques, featuring order tracking and secure payments."
+      },
+      "dhabi": {
+        "title": "Al Dhabi — Delivery App",
+        "description": "A comprehensive delivery platform for restaurants, groceries, and pharmacies, offering real-time order tracking and multiple payment options."
       }
     }
   },

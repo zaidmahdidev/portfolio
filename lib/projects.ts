@@ -5,6 +5,8 @@ export const projectIds = [
   "advisor",
   "alahally",
   "thikr",
+  "topmedia",
+  "dhabi",
 ] as const;
 
 export type ProjectId = (typeof projectIds)[number];
@@ -38,5 +40,15 @@ export const projectAssets: Record<
     accent: "cyan",
     githubUrl: "https://github.com/zaidmahdidev/thekr-app",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.zaid.thekr_app"
+  },
+  topmedia: {
+    image: "/images/portfolio/top_media.png",
+    accent: "sky",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.zaid.topmedia"
+  },
+  dhabi: {
+    image: "/images/portfolio/dhabi.png",
+    accent: "amber",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.dhabi.dhabi_user"
   },
 };
