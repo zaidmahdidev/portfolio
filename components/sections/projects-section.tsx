@@ -33,7 +33,7 @@ export function ProjectsSection() {
           <SectionHeading title={t("title")} subtitle={t("subtitle")} center />
         </motion.div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projectIds.map((id, index) => (
+          {[...projectIds].reverse().map((id, index) => (
             <ProjectCard
               key={id}
               id={id}
