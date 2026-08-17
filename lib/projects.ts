@@ -1,12 +1,12 @@
 export const projectIds = [
-  "agriculture",
   "dairy",
   "diesel",
   "advisor",
+  "agriculture",
   "alahally",
   "thikr",
-  "dhabi",
   "topmedia",
+  "dhabi",
 ] as const;
 
 export type ProjectId = (typeof projectIds)[number];

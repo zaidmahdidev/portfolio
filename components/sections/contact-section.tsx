@@ -10,6 +10,7 @@ import {
   IconLinkedin,
   IconTelegram,
   IconWhatsapp,
+  IconGithub,
 } from "@/components/icons/social";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -20,6 +21,7 @@ const PHONE_DISPLAY = "+966 55 929 1894";
 const PHONE_E164 = "+966559291894";
 
 const iconMap = {
+  github: IconGithub,
   facebook: IconFacebook,
   whatsapp: IconWhatsapp,
   linkedin: IconLinkedin,

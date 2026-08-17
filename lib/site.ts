@@ -17,6 +17,10 @@ export const person = {
 
 export const socialLinks = [
   {
+    href: "https://github.com/zaidmahdidev",
+    key: "github" as const,
+  },
+  {
     href: "https://www.facebook.com/profile.php?id=100010296126041",
     key: "facebook" as const,
   },
