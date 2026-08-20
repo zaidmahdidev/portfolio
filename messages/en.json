@@ -94,6 +94,10 @@
       "dhabi": {
         "title": "Al Dhabi — Delivery App",
         "description": "A comprehensive delivery platform for restaurants, groceries, and pharmacies, offering real-time order tracking and multiple payment options."
+      },
+      "mazboot": {
+        "title": "Mazboot",
+        "description": "A comprehensive platform for field inspection management, violation tracking, and reporting. Developed as part of my work at Abaad Automation Company."
       }
     }
   },
