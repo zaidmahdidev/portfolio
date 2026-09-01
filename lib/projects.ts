@@ -46,7 +46,8 @@ export const projectAssets: Record<
   dhabi: {
     image: "/images/portfolio/dhabi.png",
     accent: "amber",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.dhabi.dhabi_user"
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.dhabi.dhabi_user",
+    appStoreUrl: "https://apps.apple.com/sa/app/%D8%A7%D9%84%D8%B8%D8%A8%D9%8A/id6778683408"
   },
   topmedia: {
     image: "/images/portfolio/top_media.png",
