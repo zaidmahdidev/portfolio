@@ -1,5 +1,5 @@
-/** Public CV path (place file in /public/cv.pdf) */
-export const CV_URL = "/cv.pdf";
+/** Public CV path (place file in /public/Zaid_Flutter_Developer_CV_2026.pdf) */
+export const CV_URL = "/Zaid_Flutter_Developer_CV_2026.pdf";
 
 /** Profile photo in /public (e.g. images/zaid.png) */
 export const PROFILE_IMAGE_SRC = "/images/zaid.png";
