@@ -127,6 +127,20 @@ function ProjectCard({
             
             {/* Action Links */}
             <div className="flex items-center gap-3">
+              {asset.webUrl && (
+                <a
+                  href={asset.webUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="z-20 p-2 -m-2 text-slate-400 hover:text-cyan-500 transition-colors"
+                  aria-label="Website"
+                >
+                  <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" />
+                  </svg>
+                </a>
+              )}
               {asset.githubUrl && (
                 <a 
                   href={asset.githubUrl} 

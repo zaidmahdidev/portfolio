@@ -98,6 +98,18 @@
       "mazboot": {
         "title": "Mazboot",
         "description": "A comprehensive platform for field inspection management, violation tracking, and reporting. Developed as part of my work at Abaad Automation Company."
+      },
+      "sanad": {
+        "title": "Sanad — Map of Islamic Scholars",
+        "description": "An interactive Arabic knowledge map linking scholars with their teachers, students, works and eras, with an explicit authenticity grade for every relation."
+      },
+      "setuply": {
+        "title": "Setuply — Workspace Store",
+        "description": "An online store for desk and workspace gear — ready-made bundles, secure payment, order tracking and a referral rewards program. Available on web and mobile."
+      },
+      "masaa": {
+        "title": "Masaa — Tender Intelligence",
+        "description": "A platform that matches businesses with the right tenders, explains why, and tracks readiness, bids and deadlines. Built as a web portal and a mobile app."
       }
     }
   },
