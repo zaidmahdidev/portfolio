@@ -94,7 +94,7 @@ function ProjectCard({
           <div className="flex items-center gap-2">
             <div className={`h-1.5 w-1.5 rounded-full ${colors.light} ${colors.dark} group-hover:animate-pulse`} />
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-              {t("cardHint")}
+              {asset.webUrl && !asset.playStoreUrl && !asset.appStoreUrl ? t("cardHintWeb") : t("cardHint")}
             </span>
           </div>
 

@@ -61,6 +61,7 @@
     "title": "Projects",
     "subtitle": "A few projects that represent my approach — mobile-first, modern, and built to scale.",
     "cardHint": "Mobile Application",
+    "cardHintWeb": "Website",
     "view": "Explore",
     "items": {
       "agriculture": {
