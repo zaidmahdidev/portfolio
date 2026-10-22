@@ -1,76 +1,108 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { PROFILE_IMAGE_SRC, person } from "@/lib/site";
+import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { TiltCard } from "@/components/ui/tilt-card";
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const values = [
+  {
+    key: "performance",
+    icon: <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />,
+    tint: "from-brand/25 to-brand/5 text-brand",
+  },
+  {
+    key: "architecture",
+    icon: <path d="M12 2l9 5v10l-9 5-9-5V7l9-5zM12 12l9-5M12 12v10M12 12L3 7" />,
+    tint: "from-brand/25 to-brand/5 text-brand",
+  },
+  {
+    key: "experience",
+    icon: <path d="M12 21s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.600-7 10-7 10z" />,
+    tint: "from-brand/25 to-brand/5 text-brand",
+  },
+] as const;
 
 export function AboutSection() {
   const t = useTranslations("about");
-  const reduce = useReducedMotion();
-
-  const fadeUp = (delay = 0) => ({
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: reduce ? 0 : 0.6, ease, delay: reduce ? 0 : delay },
-  });
 
   return (
-    <section id="about" className="section-a scroll-mt-24 py-24 sm:py-32" aria-labelledby="about-title">
+    <section id="about" className="relative scroll-mt-24 py-24 sm:py-32" aria-labelledby="about-title">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <SectionHeading label={t("label")} title={t("title")} />
+        </Reveal>
 
-        <motion.div {...fadeUp(0)} className="text-center">
-          <SectionHeading title={t("title")} center />
-        </motion.div>
-
-        <div className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-
-          <motion.div {...fadeUp(0.1)} className="mx-auto w-full max-w-xs lg:max-w-sm">
-            <div className="relative">
-              <div className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-to-br from-cyan-500/20 to-violet-500/20 blur-3xl" aria-hidden />
-              <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/60 bg-white shadow-xl shadow-slate-900/10 dark:border-white/8 dark:bg-slate-900/60 dark:shadow-black/40">
-                <div className="flex items-center gap-1.5 border-b border-slate-100/80 px-4 py-3 dark:border-white/6">
-                  <div className="size-2 rounded-full bg-slate-200 dark:bg-white/10" />
-                  <div className="size-2 rounded-full bg-slate-200 dark:bg-white/10" />
-                  <div className="size-2 rounded-full bg-slate-200 dark:bg-white/10" />
-                </div>
-                <div className="relative aspect-[3/4] w-full overflow-hidden">
+        <div className="mt-14 grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+          <Reveal delay={0.05}>
+            <TiltCard max={6} className="rounded-[2rem]">
+              <div className="glass relative overflow-hidden rounded-[2rem] p-2">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem]">
                   <Image
                     src={PROFILE_IMAGE_SRC}
                     alt={person.name}
                     fill
-                    className="object-cover object-[center_15%]"
-                    sizes="(max-width: 768px) 80vw, 380px"
-                    priority
+                    className="object-cover object-[center_15%] transition-transform duration-700 hover:scale-105"
+                    sizes="(max-width: 1024px) 90vw, 440px"
                   />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/25 via-transparent to-transparent" aria-hidden />
-                </div>
-                <div className="flex items-center justify-between px-4 py-3.5">
-                  <div>
-                    <p className="text-sm font-bold text-slate-900 dark:text-white">{person.name}</p>
-                    <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">Flutter Developer</p>
-                  </div>
-                  <div className="flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1.5 dark:bg-emerald-400/10">
-                    <span className="size-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
-                    <span className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">Available</span>
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <div className="absolute inset-x-4 bottom-4 flex items-end justify-between">
+                    <div>
+                      <p className="text-lg font-extrabold text-white">{person.name}</p>
+                      <p className="text-xs font-medium text-white/70">Flutter Developer</p>
+                    </div>
+                    <span className="flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-[11px] font-semibold text-white backdrop-blur-md">
+                      <span className="size-1.5 animate-pulse rounded-full bg-emerald-400" />
+                      {t("available")}
+                    </span>
                   </div>
                 </div>
               </div>
+            </TiltCard>
+          </Reveal>
+
+          <div className="space-y-8">
+            <Reveal delay={0.1}>
+              <p className="text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">{t("body1")}</p>
+            </Reveal>
+            <Reveal delay={0.16}>
+              <div className="space-y-4 text-base leading-relaxed text-muted sm:text-lg">
+                <p>{t("body2")}</p>
+                <p>{t("body3")}</p>
+              </div>
+            </Reveal>
+
+            <div className="grid gap-4 sm:grid-cols-3">
+              {values.map((v, i) => (
+                <Reveal key={v.key} delay={0.22 + i * 0.08}>
+                  <TiltCard max={9} className="rounded-3xl">
+                    <div className="glass h-full rounded-3xl p-5">
+                      <span
+                        className={`flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br ${v.tint}`}
+                      >
+                        <svg
+                          className="size-5"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden
+                        >
+                          {v.icon}
+                        </svg>
+                      </span>
+                      <h3 className="mt-4 text-base font-bold">{t(`values.${v.key}.title`)}</h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-muted">{t(`values.${v.key}.desc`)}</p>
+                    </div>
+                  </TiltCard>
+                </Reveal>
+              ))}
             </div>
-          </motion.div>
-
-          <motion.div
-            {...fadeUp(0.18)}
-            className="space-y-5 text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg"
-          >
-            <p>{t("body1")}</p>
-            <p>{t("body2")}</p>
-            <p>{t("body3")}</p>
-          </motion.div>
-
+          </div>
         </div>
       </div>
     </section>

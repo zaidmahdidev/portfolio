@@ -25,7 +25,7 @@ export function ThemeSync() {
   useEffect(() => {
     const apply = () => {
       const pref = readStoredPreference();
-      const dark = resolveDarkMode(pref ?? "system");
+      const dark = resolveDarkMode(pref ?? "dark");
       document.documentElement.classList.toggle("dark", dark);
     };
 

@@ -10,7 +10,7 @@ export function ThemeSwitcher() {
   const [preference, setPreference] = useState<ThemePreference>("system");
 
   const syncFromStorage = useCallback(() => {
-    setPreference(readStoredPreference() ?? "system");
+    setPreference(readStoredPreference() ?? "dark");
   }, []);
 
   useLayoutEffect(() => {
@@ -44,7 +44,7 @@ export function ThemeSwitcher() {
     <div
       role="group"
       aria-label={t("aria")}
-      className="pointer-events-auto relative z-10 inline-flex rounded-full border border-slate-200/70 bg-white/60 p-1 text-[11px] font-semibold text-slate-600 shadow-inner shadow-slate-900/5 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:shadow-black/30"
+      className="glass pointer-events-auto relative z-10 inline-flex rounded-full p-1 text-xs font-semibold text-muted"
     >
       {modes.map(({ id, label }) => {
         const active = preference === id;
@@ -55,10 +55,10 @@ export function ThemeSwitcher() {
             title={label}
             aria-pressed={active}
             onClick={() => select(id)}
-            className={`relative z-10 rounded-full px-2 py-1.5 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500/70 sm:px-2.5 ${
+            className={`relative z-10 rounded-full px-2 py-1.5 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:px-2.5 ${
               active
-                ? "bg-white text-slate-900 shadow-sm dark:bg-white/10 dark:text-white"
-                : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                ? "bg-fg text-bg shadow-sm"
+                : "text-muted hover:text-fg"
             }`}
           >
             {id === "system" ? (

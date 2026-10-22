@@ -1,27 +1,36 @@
 import { ThemeSync } from "@/components/theme/theme-sync";
 import { THEME_STORAGE_KEY } from "@/lib/theme";
-import { JetBrains_Mono, Noto_Sans_Arabic, Plus_Jakarta_Sans } from "next/font/google";
+import { IBM_Plex_Sans_Arabic, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 
-const themeBootstrap = `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var s=localStorage.getItem(k);var d;if(s==="dark")d=true;else if(s==="light")d=false;else d=window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);}catch(e){}})();`;
+const themeBootstrap = `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var s=localStorage.getItem(k);var d;if(s==="dark")d=true;else if(s==="light")d=false;else d=true;document.documentElement.classList.toggle("dark",d);}catch(e){}})();`;
 
-const plusJakarta = Plus_Jakarta_Sans({
+// Readex Pro only for Latin: its Arabic final yeh has no dots, which breaks names like "مهدي".
+const readex = localFont({
   variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  declarations: [{ prop: "unicode-range", value: "U+0000-024F, U+2000-206F, U+20A0-20CF" }],
+  src: [
+    { path: "./fonts/ReadexPro_300Light.ttf", weight: "300", style: "normal" },
+    { path: "./fonts/ReadexPro_400Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/ReadexPro_500Medium.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/ReadexPro_600SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/ReadexPro_700Bold.ttf", weight: "700", style: "normal" },
+  ],
+});
+
+const plexArabic = IBM_Plex_Sans_Arabic({
+  variable: "--font-arabic",
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const jetbrains = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
-});
-
-const notoArabic = Noto_Sans_Arabic({
-  variable: "--font-arabic",
-  subsets: ["arabic"],
-  weight: ["400", "600", "700"],
 });
 
 export default function RootLayout({
@@ -32,9 +41,9 @@ export default function RootLayout({
   return (
     <html
       suppressHydrationWarning
-      className={`${plusJakarta.variable} ${jetbrains.variable} ${notoArabic.variable} h-full`}
+      className={`${readex.variable} ${plexArabic.variable} ${jetbrains.variable} h-full`}
     >
-      <body suppressHydrationWarning className="min-h-dvh bg-slate-50 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50 [font-family:var(--font-sans),var(--font-arabic),system-ui,sans-serif]">
+      <body suppressHydrationWarning className="grain min-h-dvh bg-bg font-sans text-fg antialiased [font-family:var(--font-sans),var(--font-arabic),system-ui,sans-serif]">
         <Script
           id="theme-bootstrap"
           strategy="beforeInteractive"

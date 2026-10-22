@@ -1,3 +1,5 @@
+import { AuroraBackground } from "@/components/effects/aurora-background";
+import { CursorEffects } from "@/components/effects/cursor-effects";
 import { SiteHeader } from "@/components/layout/site-header";
 import { AboutSection } from "@/components/sections/about-section";
 import { ContactSection } from "@/components/sections/contact-section";
@@ -15,6 +17,8 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
+      <AuroraBackground />
+      <CursorEffects />
       <SiteHeader />
       <main className="relative z-0 overflow-x-hidden">
         <HeroSection />

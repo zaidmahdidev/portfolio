@@ -30,7 +30,7 @@ export function LanguageSwitcher() {
     <div
       role="group"
       aria-label="Language"
-      className="pointer-events-auto relative z-10 inline-flex rounded-full border border-slate-200/70 bg-white/60 p-1 text-xs font-semibold text-slate-600 shadow-inner shadow-slate-900/5 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:shadow-black/30"
+      className="glass pointer-events-auto relative z-10 inline-flex rounded-full p-1 text-xs font-semibold text-muted"
     >
       {routing.locales.map((loc) => {
         const active = locale === loc;
@@ -39,10 +39,10 @@ export function LanguageSwitcher() {
             key={loc}
             type="button"
             onClick={() => switchLocale(loc)}
-            className={`relative z-10 rounded-full px-3 py-1.5 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500/60 ${
+            className={`relative z-10 rounded-full px-3 py-1.5 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
               active
-                ? "bg-white text-slate-900 shadow-sm dark:bg-white/10 dark:text-white"
-                : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                ? "bg-fg text-bg shadow-sm"
+                : "text-muted hover:text-fg"
             }`}
           >
             {loc.toUpperCase()}

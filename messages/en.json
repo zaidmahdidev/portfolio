@@ -25,22 +25,48 @@
     "primaryCta": "View Work",
     "secondaryCta": "Get in Touch",
     "cvView": "View CV",
-    "cvDownload": "Download CV"
+    "cvDownload": "Download CV",
+    "available": "Open to new projects",
+    "w1": "Flutter Developer",
+    "w2": "Pixel-perfect Mobile UI",
+    "w3": "Clean Architecture",
+    "w4": "Android · iOS · Web",
+    "stats": {
+      "projects": "Projects delivered",
+      "android": "Apps on Google Play",
+      "ios": "Apps on App Store",
+      "web": "Live websites"
+    }
   },
   "about": {
     "label": "About",
     "title": "About Me",
     "body1": "I'm Zaid, a mobile application developer with hands-on experience delivering apps that are stable, scalable, and ready for real users.",
     "body2": "My work combines thoughtful product design, strong architecture, and dependable integrations to create experiences that feel fast and intuitive.",
-    "body3": "I care deeply about code quality, long-term maintainability, and continuous improvement, so every project ships with confidence and grows with ease."
+    "body3": "I care deeply about code quality, long-term maintainability, and continuous improvement, so every project ships with confidence and grows with ease.",
+    "available": "Available",
+    "values": {
+      "performance": {
+        "title": "Performance first",
+        "desc": "Smooth 60fps interfaces and lean, profiled builds."
+      },
+      "architecture": {
+        "title": "Built to scale",
+        "desc": "Clean Architecture, SOLID and testable layers."
+      },
+      "experience": {
+        "title": "Human experience",
+        "desc": "Interfaces that feel natural from the first tap."
+      }
+    }
   },
   "skills": {
-    "label": "Skills",
-    "title": "What I work with",
-    "subtitle": "A focused set of tools and practices I use to build reliable, scalable mobile apps.",
+    "label": "Tech stack",
+    "title": "Skills & Tools",
+    "subtitle": "The technologies and practices behind every app I ship, from interface to release.",
     "items": {
       "flutter": "Flutter & Dart",
-      "unittest": "Unit Testing",
+      "unittest": "Unit & Widget Testing",
       "git": "Git & GitHub",
       "uiux": "Responsive UI/UX",
       "devtools": "DevTools & Performance Profiling",
@@ -110,8 +136,13 @@
       },
       "masaa": {
         "title": "Masaa — Tender Intelligence",
-        "description": "A platform that matches businesses with the right tenders, explains why, and tracks readiness, bids and deadlines. Built as a web portal and a mobile app."
+        "description": "A platform that matches businesses with the right tenders, explains why, and tracks readiness, bids and deadlines. Built as a web portal and a mobile app, developed as part of my work at Abaad Automation Company."
       }
+    },
+    "filters": {
+      "all": "All",
+      "apps": "Mobile apps",
+      "web": "Websites"
     }
   },
   "contact": {
@@ -132,7 +163,8 @@
     "details": {
       "email": "Email",
       "phone": "Phone"
-    }
+    },
+    "headline": "Let's build something remarkable"
   },
   "footer": {
     "rights": "All rights reserved.",

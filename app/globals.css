@@ -5,7 +5,44 @@
 @theme inline {
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-  --font-arabic: var(--font-arabic);
+
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-glass: var(--glass);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-3: var(--brand-3);
+  --color-on-brand: var(--on-brand);
+
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-marquee-rev: marquee-rev 44s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-aurora: aurora 22s ease-in-out infinite alternate;
+  --animate-spin-slow: spin 18s linear infinite;
+  --animate-blink: blink 1s steps(2, start) infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes marquee-rev {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+  @keyframes float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -18px; }
+  }
+  @keyframes aurora {
+    0% { transform: translate3d(-6%, -4%, 0) scale(1) rotate(0deg); }
+    100% { transform: translate3d(8%, 6%, 0) scale(1.25) rotate(25deg); }
+  }
+  @keyframes blink {
+    to { visibility: hidden; }
+  }
 }
 
 html {
@@ -16,108 +53,183 @@ html {
   html {
     scroll-behavior: auto;
   }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
+/* ---------- Tokens ---------- */
 :root {
   color-scheme: light;
-  --surface-0: #f8fafc;
-  --surface-1: #ffffff;
-  --surface-2: #f1f5f9;
-  --border: rgba(15, 23, 42, 0.08);
-  --border-strong: rgba(15, 23, 42, 0.14);
-  --fg: #0f172a;
-  --muted: #64748b;
-  --accent: #0891b2;
-  --accent-2: #7c3aed;
-  --ring: rgba(8, 145, 178, 0.35);
-  --panel-surface: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(248, 250, 252, 0.9) 100%
-  );
-  --panel-border: rgba(15, 23, 42, 0.1);
-  --device-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(241, 245, 249, 0.95));
-  --device-border: rgba(15, 23, 42, 0.12);
-  --device-notch: rgba(15, 23, 42, 0.08);
+  --bg: #f3f6fb;
+  --fg: #0b1220;
+  --muted: #5a6578;
+  --line: rgba(11, 18, 32, 0.11);
+  --glass: rgba(255, 255, 255, 0.6);
+  --glass-strong: rgba(255, 255, 255, 0.92);
+  --brand: #1d4ed8;
+  --brand-2: #3b82f6;
+  --brand-3: #60a5fa;
+  --on-brand: #ffffff;
+  --grid: rgba(11, 18, 32, 0.05);
+  --aurora-a: rgba(59, 130, 246, 0.2);
+  --aurora-b: rgba(14, 116, 255, 0.14);
+  --aurora-c: rgba(120, 170, 255, 0.16);
 }
 
 .dark {
   color-scheme: dark;
-  --surface-0: #030712;
-  --surface-1: #0b1224;
-  --surface-2: #111c33;
-  --border: rgba(148, 163, 184, 0.12);
-  --border-strong: rgba(148, 163, 184, 0.22);
-  --fg: #f8fafc;
-  --muted: #94a3b8;
-  --accent: #22d3ee;
-  --accent-2: #a78bfa;
-  --ring: rgba(34, 211, 238, 0.35);
-  --panel-surface: linear-gradient(
-    180deg,
-    rgba(17, 28, 51, 0.72) 0%,
-    rgba(11, 18, 36, 0.62) 100%
-  );
-  --panel-border: rgba(148, 163, 184, 0.12);
-  --device-bg: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.92));
-  --device-border: rgba(148, 163, 184, 0.22);
-  --device-notch: rgba(2, 6, 23, 0.85);
+  --bg: #080b13;
+  --fg: #eef2fb;
+  --muted: #98a3b8;
+  --line: rgba(238, 242, 251, 0.1);
+  --glass: rgba(238, 242, 251, 0.045);
+  --glass-strong: rgba(238, 242, 251, 0.09);
+  --brand: #4d8dff;
+  --brand-2: #78a8ff;
+  --brand-3: #b3ccff;
+  --on-brand: #06122e;
+  --grid: rgba(238, 242, 251, 0.045);
+  --aurora-a: rgba(59, 130, 246, 0.2);
+  --aurora-b: rgba(14, 116, 255, 0.12);
+  --aurora-c: rgba(120, 170, 255, 0.1);
 }
 
 body {
-  background-color: var(--surface-0);
+  background-color: var(--bg);
   color: var(--fg);
-}
-
-/* Per-section background stripes */
-.section-a {
-  background-color: rgba(8, 145, 178, 0.035);
-}
-.section-b {
-  background-color: rgba(124, 58, 237, 0.03);
-}
-.dark .section-a {
-  background-color: rgba(34, 211, 238, 0.04);
-}
-.dark .section-b {
-  background-color: rgba(167, 139, 250, 0.04);
 }
 
 ::selection {
-  background: rgba(8, 145, 178, 0.2);
+  background: color-mix(in srgb, var(--brand) 35%, transparent);
   color: var(--fg);
 }
 
-.dark ::selection {
-  background: rgba(34, 211, 238, 0.25);
-  color: var(--fg);
+/* ---------- Scrollbar ---------- */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--brand-2) 55%, transparent) transparent;
 }
 
-.surface-panel {
-  background: var(--panel-surface);
-  border: 1px solid var(--panel-border);
-  backdrop-filter: blur(14px);
+/* ---------- Utilities ---------- */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
 
-.device-frame {
-  border-radius: 2.25rem;
-  border: 1px solid var(--device-border);
-  background: var(--device-bg);
-  box-shadow:
-    0 0 0 1px rgba(15, 23, 42, 0.04) inset,
-    0 30px 80px rgba(15, 23, 42, 0.12);
+.text-gradient {
+  background: linear-gradient(100deg, var(--brand) 0%, var(--brand-2) 50%, var(--brand-3) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 8s ease-in-out infinite alternate;
 }
 
-.dark .device-frame {
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
-    0 30px 80px rgba(0, 0, 0, 0.55);
+@keyframes gradient-shift {
+  to {
+    background-position: 100% center;
+  }
 }
 
-.device-notch {
-  height: 1.5rem;
-  width: 7.5rem;
-  border-radius: 999px;
-  background: var(--device-notch);
-  border: 1px solid var(--border-strong);
+.text-outline {
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--fg) 28%, transparent);
+  color: transparent;
+}
+
+/* Subtle noise + grid overlay used by the page background */
+.bg-grid {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+}
+
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Mouse-follow spotlight on cards (vars set from JS) */
+.spotlight {
+  position: relative;
+}
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--brand) 22%, transparent),
+    transparent 60%
+  );
+}
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Gradient border that follows the spotlight */
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--brand) 90%, transparent),
+    transparent 65%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.spotlight:hover::after {
+  opacity: 1;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+/* Marquee must keep LTR motion math even on RTL pages */
+.marquee-track {
+  direction: ltr;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Arabic script must stay joined: never letter-space it */
+:lang(ar) * {
+  letter-spacing: normal !important;
+}
+:lang(ar) .text-outline {
+  -webkit-text-stroke-width: 1px;
 }

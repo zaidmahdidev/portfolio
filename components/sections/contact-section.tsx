@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { CV_URL, socialLinks } from "@/lib/site";
@@ -12,9 +11,8 @@ import {
   IconWhatsapp,
   IconGithub,
 } from "@/components/icons/social";
+import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-
-const ease = [0.22, 1, 0.36, 1] as const;
 
 const EMAIL = "zaidmhdi33@gmail.com";
 const PHONE_DISPLAY = "+966 55 929 1894";
@@ -29,6 +27,9 @@ const iconMap = {
   telegram: IconTelegram,
 } as const;
 
+const inputCls =
+  "mt-2 w-full rounded-2xl border border-[var(--line)] bg-[var(--glass)] px-4 py-3.5 text-sm text-fg outline-none transition placeholder:text-muted/60 focus:border-brand/70 focus:bg-[var(--glass-strong)] focus:ring-4 focus:ring-brand/15";
+
 function ContactForm() {
   const t = useTranslations("contact");
   const [mounted, setMounted] = useState(false);
@@ -39,7 +40,7 @@ function ContactForm() {
   }, []);
 
   if (!mounted) {
-    return <div className="min-h-[26rem] animate-pulse rounded-3xl bg-slate-100/60 dark:bg-white/4" />;
+    return <div className="min-h-[26rem] animate-pulse rounded-3xl bg-[var(--glass)]" />;
   }
 
   return (
@@ -54,7 +55,7 @@ function ContactForm() {
       <Field id="email" name="email" type="email" label={t("form.email")} placeholder={t("form.placeholderEmail")} required />
 
       <div>
-        <label htmlFor="message" className="block text-xs font-semibold text-slate-600 dark:text-slate-300">
+        <label htmlFor="message" className="block text-xs font-semibold text-muted">
           {t("form.message")}
         </label>
         <textarea
@@ -62,15 +63,19 @@ function ContactForm() {
           name="message"
           rows={5}
           placeholder={t("form.placeholderMessage")}
-          className="mt-2 w-full resize-none rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/15 dark:border-white/8 dark:bg-slate-950/50 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-cyan-400/40"
+          className={`${inputCls} resize-none`}
         />
       </div>
 
       <button
         type="submit"
-        className="inline-flex h-12 w-full items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-600 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:brightness-110 sm:w-auto sm:px-10"
+        className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-2xl bg-gradient-to-r from-brand via-brand-2 to-brand-3 px-10 py-4 text-sm font-bold text-on-brand shadow-[0_14px_44px_-12px] shadow-brand/50 transition-transform hover:scale-[1.02] sm:w-auto"
       >
-        {t("form.submit")}
+        <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+        <span className="relative">{t("form.submit")}</span>
+        <svg className="relative size-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
       </button>
     </form>
   );
@@ -79,89 +84,105 @@ function ContactForm() {
 export function ContactSection() {
   const t = useTranslations("contact");
   const tcv = useTranslations("cv");
-  const reduce = useReducedMotion();
-
-  const fadeUp = (delay = 0) => ({
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: reduce ? 0 : 0.6, ease, delay: reduce ? 0 : delay },
-  });
 
   return (
-    <section id="contact" className="section-b scroll-mt-24 py-24 sm:py-32" aria-labelledby="contact-title">
+    <section id="contact" className="relative scroll-mt-24 py-24 sm:py-32" aria-labelledby="contact-title">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <SectionHeading label={t("label")} title={t("headline")} subtitle={t("intro")} />
+        </Reveal>
 
-        <motion.div {...fadeUp(0)}>
-          <SectionHeading title={t("title")} subtitle={t("intro")} center />
-        </motion.div>
-
-        <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:items-start">
-
-          <motion.div {...fadeUp(0.08)} className="space-y-5 lg:col-span-4">
-            <div className="surface-panel rounded-2xl p-5">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">
-                {t("details.email")}
+        <div className="mt-14 grid gap-8 lg:grid-cols-12 lg:items-start">
+          <Reveal delay={0.08} className="space-y-4 lg:col-span-5">
+            <a
+              href={`mailto:${EMAIL}`}
+              className="glass group block rounded-3xl p-6 transition hover:bg-[var(--glass-strong)]"
+            >
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted">{t("details.email")}</p>
+              <p className="mt-2 break-all text-lg font-bold sm:text-xl">
+                <span className="text-gradient">{EMAIL}</span>
               </p>
-              <a href={`mailto:${EMAIL}`} className="mt-2 block text-sm font-medium text-cyan-700 transition hover:underline dark:text-cyan-300">
-                {EMAIL}
-              </a>
-            </div>
+            </a>
 
-            <div className="surface-panel rounded-2xl p-5">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">
-                {t("details.phone")}
-              </p>
-              <a href={`tel:${PHONE_E164}`} className="mt-2 block text-sm font-medium text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
+            <a
+              href={`tel:${PHONE_E164}`}
+              className="glass group block rounded-3xl p-6 transition hover:bg-[var(--glass-strong)]"
+            >
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted">{t("details.phone")}</p>
+              <p className="mt-2 text-lg font-bold sm:text-xl" dir="ltr" style={{ unicodeBidi: "plaintext" }}>
                 {PHONE_DISPLAY}
-              </a>
-            </div>
+              </p>
+            </a>
 
-            <div className="flex flex-wrap gap-2">
-              <a href={CV_URL} target="_blank" rel="noopener noreferrer"
-                className="inline-flex h-10 items-center justify-center rounded-xl border border-slate-200/80 bg-white/70 px-4 text-sm font-semibold text-slate-800 transition hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
-                {tcv("view")}
-              </a>
-              <a href={CV_URL} download
-                className="inline-flex h-10 items-center justify-center rounded-xl border border-slate-200/80 bg-white/70 px-4 text-sm font-semibold text-slate-800 transition hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
-                {tcv("download")}
-              </a>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2.5 pt-2">
               {socialLinks.map((s) => {
                 const Icon = iconMap[s.key];
                 return (
-                  <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.key}
-                    className="inline-flex size-10 items-center justify-center rounded-xl border border-slate-200/80 bg-white/60 text-slate-600 transition hover:border-slate-300 hover:bg-white hover:text-slate-900 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:border-white/20 dark:hover:bg-white/10 dark:hover:text-white">
-                    <Icon className="size-4" />
+                  <a
+                    key={s.href}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.key}
+                    className="glass inline-flex size-12 items-center justify-center rounded-2xl text-muted transition hover:-translate-y-1 hover:border-brand/60 hover:text-fg"
+                  >
+                    <Icon className="size-5" />
                   </a>
                 );
               })}
             </div>
-          </motion.div>
 
-          <motion.div {...fadeUp(0.14)} className="lg:col-span-8">
-            <ContactForm />
-          </motion.div>
+            <div className="flex flex-wrap gap-2 pt-2">
+              <a
+                href={CV_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass rounded-full px-5 py-2.5 text-sm font-semibold transition hover:bg-[var(--glass-strong)]"
+              >
+                {tcv("view")}
+              </a>
+              <a
+                href={CV_URL}
+                download
+                className="rounded-full bg-fg px-5 py-2.5 text-sm font-semibold text-bg transition hover:scale-[1.04]"
+              >
+                {tcv("download")}
+              </a>
+            </div>
+          </Reveal>
 
+          <Reveal delay={0.16} className="lg:col-span-7">
+            <div className="glass rounded-[2rem] p-6 sm:p-8">
+              <ContactForm />
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
   );
 }
 
-function Field({ id, name, label, placeholder, required, type = "text" }: {
-  id: string; name: string; label: string; placeholder: string; required?: boolean; type?: string;
+function Field({
+  id,
+  name,
+  label,
+  placeholder,
+  required,
+  type = "text",
+}: {
+  id: string;
+  name: string;
+  label: string;
+  placeholder: string;
+  required?: boolean;
+  type?: string;
 }) {
   return (
     <div>
-      <label htmlFor={id} className="block text-xs font-semibold text-slate-600 dark:text-slate-300">
+      <label htmlFor={id} className="block text-xs font-semibold text-muted">
         {label}
       </label>
-      <input
-        id={id} name={name} type={type} required={required} placeholder={placeholder}
-        className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/15 dark:border-white/8 dark:bg-slate-950/50 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-cyan-400/40"
-      />
+      <input id={id} name={name} type={type} required={required} placeholder={placeholder} className={inputCls} />
     </div>
   );
 }
