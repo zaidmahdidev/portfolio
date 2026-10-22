@@ -55,10 +55,10 @@ export function SkillsSection() {
           <SectionHeading label={t("label")} title={t("title")} subtitle={t("subtitle")} center />
         </Reveal>
       </div>
-      <Reveal delay={0.1} className="mt-14 space-y-4">
+      <div className="mt-14 space-y-4">
         <MarqueeRow keys={rows[0]} label={label} />
         <MarqueeRow keys={rows[1]} label={label} reverse />
-      </Reveal>
+      </div>
     </section>
   );
 }

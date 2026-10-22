@@ -66,9 +66,9 @@ html {
   color-scheme: light;
   --bg: #f3f6fb;
   --fg: #0b1220;
-  --muted: #5a6578;
-  --line: rgba(11, 18, 32, 0.11);
-  --glass: rgba(255, 255, 255, 0.6);
+  --muted: #46506a;
+  --line: rgba(11, 18, 32, 0.16);
+  --glass: rgba(255, 255, 255, 0.75);
   --glass-strong: rgba(255, 255, 255, 0.92);
   --brand: #1d4ed8;
   --brand-2: #3b82f6;
@@ -84,10 +84,10 @@ html {
   color-scheme: dark;
   --bg: #080b13;
   --fg: #eef2fb;
-  --muted: #98a3b8;
-  --line: rgba(238, 242, 251, 0.1);
-  --glass: rgba(238, 242, 251, 0.045);
-  --glass-strong: rgba(238, 242, 251, 0.09);
+  --muted: #b9c3d6;
+  --line: rgba(238, 242, 251, 0.16);
+  --glass: rgba(238, 242, 251, 0.07);
+  --glass-strong: rgba(238, 242, 251, 0.12);
   --brand: #4d8dff;
   --brand-2: #78a8ff;
   --brand-3: #b3ccff;
@@ -123,6 +123,10 @@ html {
 }
 
 .text-gradient {
+  /* Extra paint area so descender marks (e.g. dots under Arabic yeh) are not clipped by background-clip:text */
+  display: inline-block;
+  padding-block: 0.45em;
+  margin-block: -0.45em;
   background: linear-gradient(100deg, var(--brand) 0%, var(--brand-2) 50%, var(--brand-3) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -210,6 +214,7 @@ html {
 }
 
 .marquee-mask {
+  direction: ltr;
   mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }

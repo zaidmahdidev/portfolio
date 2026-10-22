@@ -11,6 +11,7 @@ const themeBootstrap = `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY
 const readex = localFont({
   variable: "--font-sans",
   display: "swap",
+  adjustFontFallback: false,
   declarations: [{ prop: "unicode-range", value: "U+0000-024F, U+2000-206F, U+20A0-20CF" }],
   src: [
     { path: "./fonts/ReadexPro_300Light.ttf", weight: "300", style: "normal" },
@@ -43,7 +44,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${readex.variable} ${plexArabic.variable} ${jetbrains.variable} h-full`}
     >
-      <body suppressHydrationWarning className="grain min-h-dvh bg-bg font-sans text-fg antialiased [font-family:var(--font-sans),var(--font-arabic),system-ui,sans-serif]">
+      <body suppressHydrationWarning className="grain min-h-dvh bg-bg text-fg antialiased [font-family:var(--font-sans),var(--font-arabic),system-ui,sans-serif]">
         <Script
           id="theme-bootstrap"
           strategy="beforeInteractive"
